@@ -11,17 +11,22 @@ import Foundation
 final class CharacterDetailViewModel {
     let imageURL: URL?
     let displayName: String
+    let displayNickname: String
     let displayOccupation: String
     let displayStatus: String
-    let displayNickname: String
     let displaySeasonAppearances: String
 
     init(character: Character) {
         self.imageURL = URL(string: character.img)
         self.displayName = character.name
-        self.displayOccupation = character.occupation.joined(separator: ", ")
-        self.displayStatus = character.status
         self.displayNickname = character.nickname
+        self.displayStatus = character.status
+
+        if character.occupation.isEmpty {
+            self.displayOccupation = "No Occupation"
+        } else {
+            self.displayOccupation = character.occupation.joined(separator: ", ")
+        }
 
         var appearanceText: [String] = []
         if !character.appearance.isEmpty {
