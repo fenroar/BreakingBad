@@ -32,8 +32,13 @@ final class CharacterListViewController: UIViewController {
     private func setup() {
         title = "Breaking Bad"
 
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = CharacterListItemCell.estimatedHeight
         tableView.dataSource = self
         tableView.delegate = self
+
+        tableView.register(CharacterListItemCell.nib,
+                           forCellReuseIdentifier: CharacterListItemCell.reuseIdentifier)
 
         // TODO: Set up search controller
     }
@@ -47,8 +52,14 @@ extension CharacterListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO:
-        return UITableViewCell()
+        guard let characterItemCell = tableView.dequeueReusableCell(withIdentifier: CharacterListItemCell.reuseIdentifier, for: indexPath) as? CharacterListItemCell,
+            let itemViewModel = viewModel?.items[indexPath.row] else {
+            return UITableViewCell()
+        }
+
+        characterItemCell.setup(with: itemViewModel)
+
+        return characterItemCell
     }
 }
 
