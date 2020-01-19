@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterListViewController" customModule="BreakingBad" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="nKi-4D-dw2" id="u6f-Ld-bYX"/>
                 <outlet property="view" destination="q5X-Ut-fOx" id="BVl-Xx-hQB"/>
             </connections>
         </placeholder>

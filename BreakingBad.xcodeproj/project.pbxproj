@@ -20,6 +20,8 @@
 		D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21B23D4E43800AFAFCC /* Endpoint.swift */; };
 		D08DC21E23D4E4AD00AFAFCC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */; };
 		D08DC22023D4E4F300AFAFCC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */; };
+		D08DC22223D4E75A00AFAFCC /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC22123D4E75A00AFAFCC /* CharacterListViewModel.swift */; };
+		D08DC22423D4E78D00AFAFCC /* CharacterListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC22323D4E78D00AFAFCC /* CharacterListItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		D08DC21B23D4E43800AFAFCC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		D08DC22123D4E75A00AFAFCC /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		D08DC22323D4E78D00AFAFCC /* CharacterListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 			children = (
 				D08DC20923D4DB6300AFAFCC /* CharacterListViewController.swift */,
 				D08DC20D23D4DC3500AFAFCC /* CharacterListViewController.xib */,
+				D08DC22123D4E75A00AFAFCC /* CharacterListViewModel.swift */,
+				D08DC22323D4E78D00AFAFCC /* CharacterListItemViewModel.swift */,
 			);
 			path = "Character List";
 			sourceTree = "<group>";
@@ -271,9 +277,11 @@
 				D08DC20A23D4DB6300AFAFCC /* CharacterListViewController.swift in Sources */,
 				D08DC1EA23D4DB3700AFAFCC /* SceneDelegate.swift in Sources */,
 				D08DC21E23D4E4AD00AFAFCC /* NetworkError.swift in Sources */,
+				D08DC22223D4E75A00AFAFCC /* CharacterListViewModel.swift in Sources */,
 				D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */,
 				D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */,
 				D08DC22023D4E4F300AFAFCC /* NetworkService.swift in Sources */,
+				D08DC22423D4E78D00AFAFCC /* CharacterListItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

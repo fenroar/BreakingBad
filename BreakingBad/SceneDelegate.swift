@@ -25,7 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
+
         let characterListViewController = CharacterListViewController()
+        characterListViewController.viewModel = CharacterListViewModel(networkService: NetworkManager(),
+                                                                       delegate: characterListViewController)
         let navigationController = UINavigationController(rootViewController: characterListViewController)
         window.rootViewController = navigationController
         

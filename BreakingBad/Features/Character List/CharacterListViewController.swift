@@ -10,18 +10,56 @@ import UIKit
 
 final class CharacterListViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet var tableView: UITableView!
+
+    // MARK: - Properties
+    var viewModel: CharacterListViewModel?
+
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
 
-        let manager = NetworkManager()
-        
-        manager.getCharacters { result in
-            switch result {
-            case .success(let characters):
-                print("Got characters: \(characters.count)")
-            case .failure(let error):
-                print("failed to get characters: \(error.localizedDescription)")
-            }
+        guard let viewModel = viewModel else {
+            fatalError("")
         }
+
+        viewModel.loadCharacters()
+    }
+
+    // MARK: - Private
+    private func setup() {
+        title = "Breaking Bad"
+
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        // TODO: Set up search controller
+    }
+}
+
+
+// MARK: - UITableViewDataSource
+extension CharacterListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.items.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO:
+        return UITableViewCell()
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension CharacterListViewController: UITableViewDelegate {
+    // TODO:
+}
+
+// MARK: - CharacterListViewModelDelegate
+extension CharacterListViewController: CharacterListViewModelDelegate {
+    func characterListLoadDidComplete() {
+        tableView.reloadData()
     }
 }
