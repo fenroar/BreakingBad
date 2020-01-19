@@ -14,6 +14,9 @@
 		D08DC1FF23D4DB3800AFAFCC /* BreakingBadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC1FE23D4DB3800AFAFCC /* BreakingBadTests.swift */; };
 		D08DC20A23D4DB6300AFAFCC /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC20923D4DB6300AFAFCC /* CharacterListViewController.swift */; };
 		D08DC20E23D4DC3500AFAFCC /* CharacterListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC20D23D4DC3500AFAFCC /* CharacterListViewController.xib */; };
+		D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21223D4DD5800AFAFCC /* Character.swift */; };
+		D08DC21623D4DF6100AFAFCC /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D08DC21523D4DF6100AFAFCC /* characters.json */; };
+		D08DC21923D4DF7A00AFAFCC /* CharacterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		D08DC20023D4DB3800AFAFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08DC20923D4DB6300AFAFCC /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		D08DC20D23D4DC3500AFAFCC /* CharacterListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListViewController.xib; sourceTree = "<group>"; };
+		D08DC21223D4DD5800AFAFCC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		D08DC21523D4DF6100AFAFCC /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +85,10 @@
 		D08DC1E623D4DB3700AFAFCC /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
+				D08DC21123D4DD3300AFAFCC /* Model */,
+				D08DC20B23D4DB6600AFAFCC /* Features */,
 				D08DC1E723D4DB3700AFAFCC /* AppDelegate.swift */,
 				D08DC1E923D4DB3700AFAFCC /* SceneDelegate.swift */,
-				D08DC20B23D4DB6600AFAFCC /* Features */,
 				D08DC1F023D4DB3800AFAFCC /* Assets.xcassets */,
 				D08DC1F223D4DB3800AFAFCC /* LaunchScreen.storyboard */,
 				D08DC1F523D4DB3800AFAFCC /* Info.plist */,
@@ -92,6 +99,8 @@
 		D08DC1FD23D4DB3800AFAFCC /* BreakingBadTests */ = {
 			isa = PBXGroup;
 			children = (
+				D08DC21723D4DF6F00AFAFCC /* Model */,
+				D08DC21423D4DF5200AFAFCC /* Stub */,
 				D08DC1FE23D4DB3800AFAFCC /* BreakingBadTests.swift */,
 				D08DC20023D4DB3800AFAFCC /* Info.plist */,
 			);
@@ -113,6 +122,30 @@
 				D08DC20D23D4DC3500AFAFCC /* CharacterListViewController.xib */,
 			);
 			path = "Character List";
+			sourceTree = "<group>";
+		};
+		D08DC21123D4DD3300AFAFCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D08DC21223D4DD5800AFAFCC /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D08DC21423D4DF5200AFAFCC /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				D08DC21523D4DF6100AFAFCC /* characters.json */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		D08DC21723D4DF6F00AFAFCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08DC21623D4DF6100AFAFCC /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +253,7 @@
 				D08DC1E823D4DB3700AFAFCC /* AppDelegate.swift in Sources */,
 				D08DC20A23D4DB6300AFAFCC /* CharacterListViewController.swift in Sources */,
 				D08DC1EA23D4DB3700AFAFCC /* SceneDelegate.swift in Sources */,
+				D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08DC1FF23D4DB3800AFAFCC /* BreakingBadTests.swift in Sources */,
+				D08DC21923D4DF7A00AFAFCC /* CharacterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
