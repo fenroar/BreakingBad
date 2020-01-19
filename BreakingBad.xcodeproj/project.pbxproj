@@ -17,6 +17,9 @@
 		D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21223D4DD5800AFAFCC /* Character.swift */; };
 		D08DC21623D4DF6100AFAFCC /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D08DC21523D4DF6100AFAFCC /* characters.json */; };
 		D08DC21923D4DF7A00AFAFCC /* CharacterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */; };
+		D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21B23D4E43800AFAFCC /* Endpoint.swift */; };
+		D08DC21E23D4E4AD00AFAFCC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */; };
+		D08DC22023D4E4F300AFAFCC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		D08DC21223D4DD5800AFAFCC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D08DC21523D4DF6100AFAFCC /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTest.swift; sourceTree = "<group>"; };
+		D08DC21B23D4E43800AFAFCC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		D08DC1E623D4DB3700AFAFCC /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
+				D08DC21A23D4E42700AFAFCC /* Services */,
 				D08DC21123D4DD3300AFAFCC /* Model */,
 				D08DC20B23D4DB6600AFAFCC /* Features */,
 				D08DC1E723D4DB3700AFAFCC /* AppDelegate.swift */,
@@ -146,6 +153,16 @@
 				D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D08DC21A23D4E42700AFAFCC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D08DC21B23D4E43800AFAFCC /* Endpoint.swift */,
+				D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */,
+				D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +270,10 @@
 				D08DC1E823D4DB3700AFAFCC /* AppDelegate.swift in Sources */,
 				D08DC20A23D4DB6300AFAFCC /* CharacterListViewController.swift in Sources */,
 				D08DC1EA23D4DB3700AFAFCC /* SceneDelegate.swift in Sources */,
+				D08DC21E23D4E4AD00AFAFCC /* NetworkError.swift in Sources */,
 				D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */,
+				D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */,
+				D08DC22023D4E4F300AFAFCC /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
