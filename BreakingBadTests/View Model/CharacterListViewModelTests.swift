@@ -54,11 +54,11 @@ class CharacterListViewModelTests: XCTestCase {
 
     // MARK: - Properties
     private let emptyDataSet: [Character] = []
-    private let populatedDataSet: [Character] = [Character.mock(name: "Adam"),
-                                                 Character.mock(name: "Bob"),
-                                                 Character.mock(name: "Claire"),
-                                                 Character.mock(name: "Daniel 1"),
-                                                 Character.mock(name: "Daniel 2")]
+    private let populatedDataSet: [Character] = [Character.mock(name: "Adam", appearance: [1], betterCallSaulAppearance: []),
+                                                 Character.mock(name: "Bob", appearance: [1], betterCallSaulAppearance: []),
+                                                 Character.mock(name: "Claire", appearance: [1], betterCallSaulAppearance: []),
+                                                 Character.mock(name: "Daniel 1", appearance: [1, 2, 3, 4, 5], betterCallSaulAppearance: []),
+                                                 Character.mock(name: "Daniel 2", appearance: [1, 2], betterCallSaulAppearance: [])]
 
     // MARK: - Test cases
     func testNetworkSuccess() {
@@ -95,17 +95,23 @@ class CharacterListViewModelTests: XCTestCase {
     }
 
     func testItemsFilteredWithSeasonToggle() {
-        // TODO:
+        assertItemsFilteredWithSeasonToggle(dataSet: populatedDataSet, bbSeasons: [1], expectedCount: 5)
+        assertItemsFilteredWithSeasonToggle(dataSet: populatedDataSet, bbSeasons: [2], expectedCount: 2)
+        assertItemsFilteredWithSeasonToggle(dataSet: populatedDataSet, bbSeasons: [3], expectedCount: 1)
     }
 
     func testItemsFilteredWithSearchTermAndSeasonToggle() {
-        // TODO:
+        assertItemsFilteredWithSearchTermAndSeasonToggle(dataSet: populatedDataSet, bbSeasons: [1], expectedCount: 2)
+        assertItemsFilteredWithSearchTermAndSeasonToggle(dataSet: populatedDataSet, bbSeasons: [2], expectedCount: 2)
+        assertItemsFilteredWithSearchTermAndSeasonToggle(dataSet: populatedDataSet, bbSeasons: [3], expectedCount: 1)
     }
 
     // MARK: - Private
     private func assertItemsUnfiltered(dataSet: [Character], expectedCount: Int) {
         let mockService = MockNetworkService(result: .success(dataSet))
         let viewModel = CharacterListViewModel(networkService: mockService, delegate: .none)
+        viewModel.updateFilteredSeasons(bb: Set(1...Constants.BreakingBadSeasonsCount),
+                                        bcs: [])
         viewModel.loadCharacters()
 
         XCTAssertEqual(viewModel.items.count, expectedCount)
@@ -114,6 +120,29 @@ class CharacterListViewModelTests: XCTestCase {
     private func assertItemsFilteredWithSearchTerm(dataSet: [Character], expectedCount: Int) {
         let mockService = MockNetworkService(result: .success(dataSet))
         let viewModel = CharacterListViewModel(networkService: mockService, delegate: .none)
+        viewModel.updateFilteredSeasons(bb: Set(1...Constants.BreakingBadSeasonsCount),
+                                        bcs: [])
+        viewModel.loadCharacters()
+        viewModel.filter("Daniel")
+
+        XCTAssertEqual(viewModel.items.count, expectedCount)
+    }
+
+    private func assertItemsFilteredWithSeasonToggle(dataSet: [Character], bbSeasons: [Int], expectedCount: Int) {
+        let mockService = MockNetworkService(result: .success(dataSet))
+        let viewModel = CharacterListViewModel(networkService: mockService, delegate: .none)
+        viewModel.updateFilteredSeasons(bb: Set(bbSeasons),
+                                        bcs: [])
+        viewModel.loadCharacters()
+
+        XCTAssertEqual(viewModel.items.count, expectedCount)
+    }
+
+    private func assertItemsFilteredWithSearchTermAndSeasonToggle(dataSet: [Character], bbSeasons: [Int], expectedCount: Int) {
+        let mockService = MockNetworkService(result: .success(dataSet))
+        let viewModel = CharacterListViewModel(networkService: mockService, delegate: .none)
+        viewModel.updateFilteredSeasons(bb: Set(bbSeasons),
+                                        bcs: [])
         viewModel.loadCharacters()
         viewModel.filter("Daniel")
 
@@ -122,7 +151,7 @@ class CharacterListViewModelTests: XCTestCase {
 }
 
 private extension Character {
-    static func mock(name: String) -> Character {
+    static func mock(name: String, appearance: [Int], betterCallSaulAppearance: [Int]) -> Character {
         return Character(id: Int.random(in: 0...100),
                          name: name,
                          birthday: "",
@@ -130,9 +159,9 @@ private extension Character {
                          img: "",
                          status: "",
                          nickname: "",
-                         appearance: [],
+                         appearance: appearance,
                          portrayed: "",
                          category: "",
-                         betterCallSaulAppearance: [])
+                         betterCallSaulAppearance: betterCallSaulAppearance)
     }
 }
