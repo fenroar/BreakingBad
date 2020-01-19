@@ -40,10 +40,22 @@ final class CharacterListViewController: UIViewController {
         tableView.register(CharacterListItemCell.nib,
                            forCellReuseIdentifier: CharacterListItemCell.reuseIdentifier)
 
-        // TODO: Set up search controller
+        let searchController = UISearchController()
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Type something here to search"
+        searchController.searchResultsUpdater = self
+
+        navigationItem.searchController = searchController
     }
 }
 
+extension CharacterListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+
+        viewModel?.filter(text)
+    }
+}
 
 // MARK: - UITableViewDataSource
 extension CharacterListViewController: UITableViewDataSource {
@@ -86,7 +98,7 @@ extension CharacterListViewController: UITableViewDelegate {
 
 // MARK: - CharacterListViewModelDelegate
 extension CharacterListViewController: CharacterListViewModelDelegate {
-    func characterListLoadDidComplete() {
+    func characterListDidUpdate() {
         tableView.reloadData()
     }
 }
