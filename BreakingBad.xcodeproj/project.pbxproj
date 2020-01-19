@@ -27,6 +27,9 @@
 		D08DC22923D4F2FD00AFAFCC /* CharacterListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */; };
 		D08DC23223D4FD0600AFAFCC /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */; };
 		D08DC23423D505C800AFAFCC /* CharacterListItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23323D505C800AFAFCC /* CharacterListItemViewModelTests.swift */; };
+		D08DC23723D50E0D00AFAFCC /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23623D50E0D00AFAFCC /* CharacterDetailViewController.swift */; };
+		D08DC23923D50E1900AFAFCC /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC23823D50E1900AFAFCC /* CharacterDetailViewController.xib */; };
+		D08DC23B23D50E2100AFAFCC /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23A23D50E2100AFAFCC /* CharacterDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListItemCell.xib; sourceTree = "<group>"; };
 		D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
 		D08DC23323D505C800AFAFCC /* CharacterListItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItemViewModelTests.swift; sourceTree = "<group>"; };
+		D08DC23623D50E0D00AFAFCC /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		D08DC23823D50E1900AFAFCC /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		D08DC23A23D50E2100AFAFCC /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		D9F91522C5FE3D76F31CEBAD /* Pods_BreakingBad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,7 @@
 		D08DC20B23D4DB6600AFAFCC /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D08DC23523D50DF800AFAFCC /* Character Detail */,
 				D08DC20C23D4DB6C00AFAFCC /* Character List */,
 			);
 			path = Features;
@@ -226,6 +233,16 @@
 				D08DC23323D505C800AFAFCC /* CharacterListItemViewModelTests.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		D08DC23523D50DF800AFAFCC /* Character Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D08DC23623D50E0D00AFAFCC /* CharacterDetailViewController.swift */,
+				D08DC23823D50E1900AFAFCC /* CharacterDetailViewController.xib */,
+				D08DC23A23D50E2100AFAFCC /* CharacterDetailViewModel.swift */,
+			);
+			path = "Character Detail";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +332,7 @@
 				D08DC1F423D4DB3800AFAFCC /* LaunchScreen.storyboard in Resources */,
 				D08DC1F123D4DB3800AFAFCC /* Assets.xcassets in Resources */,
 				D08DC22923D4F2FD00AFAFCC /* CharacterListItemCell.xib in Resources */,
+				D08DC23923D50E1900AFAFCC /* CharacterDetailViewController.xib in Resources */,
 				D08DC20E23D4DC3500AFAFCC /* CharacterListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08DC23723D50E0D00AFAFCC /* CharacterDetailViewController.swift in Sources */,
 				D08DC1E823D4DB3700AFAFCC /* AppDelegate.swift in Sources */,
 				D08DC20A23D4DB6300AFAFCC /* CharacterListViewController.swift in Sources */,
 				D08DC1EA23D4DB3700AFAFCC /* SceneDelegate.swift in Sources */,
@@ -406,6 +425,7 @@
 				D08DC22223D4E75A00AFAFCC /* CharacterListViewModel.swift in Sources */,
 				D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */,
 				D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */,
+				D08DC23B23D50E2100AFAFCC /* CharacterDetailViewModel.swift in Sources */,
 				D08DC22023D4E4F300AFAFCC /* NetworkService.swift in Sources */,
 				D08DC22423D4E78D00AFAFCC /* CharacterListItemViewModel.swift in Sources */,
 			);

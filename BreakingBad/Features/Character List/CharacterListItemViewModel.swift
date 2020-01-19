@@ -9,11 +9,23 @@
 import Foundation
 
 final class CharacterListItemViewModel {
-    let displayName: String
-    let imageURL: URL?
+    // MARK: - Properties
+    private let character: Character
 
+    var displayName: String {
+        return character.name
+    }
+
+    var imageURL: URL? {
+        return URL(string: character.img)
+    }
+
+    // MARK: - Properties
     init(character: Character) {
-        self.displayName = character.name
-        self.imageURL = URL(string: character.img)
+        self.character = character
+    }
+
+    func detailViewModel() -> CharacterDetailViewModel {
+        return CharacterDetailViewModel(character: character)
     }
 }

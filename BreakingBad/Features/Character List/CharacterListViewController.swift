@@ -106,7 +106,15 @@ extension CharacterListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension CharacterListViewController: UITableViewDelegate {
-    // TODO:
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let characterItemViewModel = viewModel?.items[indexPath.row] else {
+            return
+        }
+
+        let detailViewControlller = CharacterDetailViewController()
+        detailViewControlller.viewModel = characterItemViewModel.detailViewModel()
+        navigationController?.pushViewController(detailViewControlller, animated: true)
+    }
 }
 
 // MARK: - CharacterListViewModelDelegate
