@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterListViewController" customModule="BreakingBad" customModuleProvider="target">
             <connections>
+                <outlet property="bbMultiSegmentControl" destination="kls-sE-ZFb" id="8MC-LG-XG7"/>
+                <outlet property="bcsMultiSegmentControl" destination="dEU-qD-1hz" id="rxi-Od-5UQ"/>
                 <outlet property="errorMessageLabel" destination="3Zb-O1-ycW" id="jeu-iR-5zg"/>
                 <outlet property="loadingIndicator" destination="X9M-62-wPZ" id="FKa-ID-h92"/>
                 <outlet property="messageContainerView" destination="40H-PQ-8F1" id="VlO-4S-d6y"/>
@@ -21,8 +23,49 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-Hn-7cC">
+                    <rect key="frame" x="16" y="44" width="382" height="313"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-r3-Hzm">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="148.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaking Bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSP-2b-1iU">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kls-sE-ZFb" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
+                                    <rect key="frame" x="0.0" y="20.5" width="382" height="128"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="128" placeholder="YES" id="N75-CZ-rPy"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-wP-XVp">
+                            <rect key="frame" x="0.0" y="164.5" width="382" height="148.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Call Saul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-hd-EdE">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEU-qD-1hz" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
+                                    <rect key="frame" x="0.0" y="20.5" width="382" height="128"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="128" placeholder="YES" id="eO8-A2-BOL"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nKi-4D-dw2">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="373" width="414" height="523"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40H-PQ-8F1">
@@ -60,14 +103,17 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="nKi-4D-dw2" secondAttribute="trailing" id="7c7-J9-ft3"/>
                 <constraint firstAttribute="bottom" secondItem="nKi-4D-dw2" secondAttribute="bottom" id="CEq-LT-rSK"/>
+                <constraint firstItem="nKi-4D-dw2" firstAttribute="top" secondItem="Ku4-Hn-7cC" secondAttribute="bottom" constant="16" id="DFI-ea-0aQ"/>
                 <constraint firstItem="X9M-62-wPZ" firstAttribute="centerY" secondItem="Q5D-qp-8Jk" secondAttribute="centerY" id="FQj-BL-LBp"/>
-                <constraint firstItem="nKi-4D-dw2" firstAttribute="top" secondItem="q5X-Ut-fOx" secondAttribute="top" id="GDY-l2-h0F"/>
                 <constraint firstItem="40H-PQ-8F1" firstAttribute="leading" secondItem="Q5D-qp-8Jk" secondAttribute="leading" id="Ilt-uf-NBS"/>
                 <constraint firstItem="nKi-4D-dw2" firstAttribute="leading" secondItem="q5X-Ut-fOx" secondAttribute="leading" id="JtI-FW-itL"/>
                 <constraint firstItem="40H-PQ-8F1" firstAttribute="top" secondItem="Q5D-qp-8Jk" secondAttribute="top" id="Nwc-TY-jeH"/>
+                <constraint firstItem="Ku4-Hn-7cC" firstAttribute="top" secondItem="Q5D-qp-8Jk" secondAttribute="top" id="buY-hj-fMq"/>
                 <constraint firstItem="Q5D-qp-8Jk" firstAttribute="bottom" secondItem="40H-PQ-8F1" secondAttribute="bottom" id="duP-tq-Dmo"/>
                 <constraint firstItem="X9M-62-wPZ" firstAttribute="centerX" secondItem="Q5D-qp-8Jk" secondAttribute="centerX" id="hXS-Eg-nRl"/>
                 <constraint firstItem="Q5D-qp-8Jk" firstAttribute="trailing" secondItem="40H-PQ-8F1" secondAttribute="trailing" id="uXi-LP-eWD"/>
+                <constraint firstItem="Ku4-Hn-7cC" firstAttribute="leading" secondItem="Q5D-qp-8Jk" secondAttribute="leading" constant="16" id="wkz-Lw-N3Y"/>
+                <constraint firstItem="Q5D-qp-8Jk" firstAttribute="trailing" secondItem="Ku4-Hn-7cC" secondAttribute="trailing" constant="16" id="xFx-P1-Cq6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5D-qp-8Jk"/>
             <point key="canvasLocation" x="139" y="153"/>

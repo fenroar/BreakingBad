@@ -10,6 +10,7 @@
 		1019C0C57EB15D3E8784663E /* Pods_BreakingBad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F91522C5FE3D76F31CEBAD /* Pods_BreakingBad.framework */; };
 		32830AAD0E0187D7E79C5EA6 /* Pods_BreakingBadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DDC25BBEBF5D528A740571 /* Pods_BreakingBadTests.framework */; };
 		D06CA16223D5163800F39464 /* CharacterDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CA16123D5163800F39464 /* CharacterDetailViewModelTests.swift */; };
+		D06CA16423D51A2D00F39464 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06CA16323D51A2D00F39464 /* Constants.swift */; };
 		D08DC1E823D4DB3700AFAFCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC1E723D4DB3700AFAFCC /* AppDelegate.swift */; };
 		D08DC1EA23D4DB3700AFAFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC1E923D4DB3700AFAFCC /* SceneDelegate.swift */; };
 		D08DC1F123D4DB3800AFAFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08DC1F023D4DB3800AFAFCC /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		BE04B6719FDAAF20EBE94D7C /* Pods-BreakingBad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBad.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBad/Pods-BreakingBad.debug.xcconfig"; sourceTree = "<group>"; };
 		C767DDEBB739753522C2CEF0 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		D06CA16123D5163800F39464 /* CharacterDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModelTests.swift; sourceTree = "<group>"; };
+		D06CA16323D51A2D00F39464 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D08DC1E423D4DB3700AFAFCC /* BreakingBad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08DC1E723D4DB3700AFAFCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08DC1E923D4DB3700AFAFCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				D08DC20B23D4DB6600AFAFCC /* Features */,
 				D08DC1E723D4DB3700AFAFCC /* AppDelegate.swift */,
 				D08DC1E923D4DB3700AFAFCC /* SceneDelegate.swift */,
+				D06CA16323D51A2D00F39464 /* Constants.swift */,
 				D08DC1F023D4DB3800AFAFCC /* Assets.xcassets */,
 				D08DC1F223D4DB3800AFAFCC /* LaunchScreen.storyboard */,
 				D08DC1F523D4DB3800AFAFCC /* Info.plist */,
@@ -426,6 +429,7 @@
 				D08DC21E23D4E4AD00AFAFCC /* NetworkError.swift in Sources */,
 				D08DC22723D4F2F500AFAFCC /* CharacterListItemCell.swift in Sources */,
 				D08DC22223D4E75A00AFAFCC /* CharacterListViewModel.swift in Sources */,
+				D06CA16423D51A2D00F39464 /* Constants.swift in Sources */,
 				D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */,
 				D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */,
 				D08DC23B23D50E2100AFAFCC /* CharacterDetailViewModel.swift in Sources */,

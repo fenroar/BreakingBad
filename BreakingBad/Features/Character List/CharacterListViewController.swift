@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MultiSelectSegmentedControl
 
 final class CharacterListViewController: UIViewController {
 
@@ -16,8 +17,22 @@ final class CharacterListViewController: UIViewController {
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
 
+    @IBOutlet var bbMultiSegmentControl: MultiSelectSegmentedControl!
+    @IBOutlet var bcsMultiSegmentControl: MultiSelectSegmentedControl!
+
+    private let bbSeasons = Array(1...Constants.BreakingBadSeasonsCount)
+    private let bcsSeasons = Array(1...Constants.BetterCallSaulSeasonsCount)
+
     // MARK: - Properties
     var viewModel: CharacterListViewModel?
+
+    var showCharacterInSeason: Set<Int> {
+        return Set(bbMultiSegmentControl.selectedSegmentIndexes.map { bbSeasons[$0] })
+    }
+
+    var showCharacterInBetterCallSaulSeason: Set<Int> {
+        return Set(bcsMultiSegmentControl.selectedSegmentIndexes.map { bcsSeasons[$0] })
+    }
 
     // MARK: - Override
     override func viewDidLoad() {
@@ -28,6 +43,8 @@ final class CharacterListViewController: UIViewController {
             fatalError("")
         }
 
+        viewModel.updateFilteredSeasons(bb: showCharacterInSeason,
+                                         bcs: showCharacterInBetterCallSaulSeason)
         viewModel.loadCharacters()
     }
 
@@ -54,6 +71,15 @@ final class CharacterListViewController: UIViewController {
         searchController.searchResultsUpdater = self
 
         navigationItem.searchController = searchController
+
+        // Set up multiSegmentControl
+        bbMultiSegmentControl.delegate = self
+        bbMultiSegmentControl.items = bbSeasons.map { "\($0)" }
+        bbMultiSegmentControl.selectAllSegments()
+
+        bcsMultiSegmentControl.delegate = self
+        bcsMultiSegmentControl.items = bcsSeasons.map { "\($0)" }
+        bcsMultiSegmentControl.selectAllSegments()
     }
 
     // MARK: - Action
@@ -139,5 +165,13 @@ extension CharacterListViewController: CharacterListViewModelDelegate {
         } else {
             tableView.isHidden = true
         }
+    }
+}
+
+// MARK: - MultiSelectSegmentedControlDelegate
+extension CharacterListViewController: MultiSelectSegmentedControlDelegate {
+    func multiSelect(_ multiSelectSegmentedControl: MultiSelectSegmentedControl, didChange value: Bool, at index: Int) {
+        viewModel?.updateFilteredSeasons(bb: showCharacterInSeason,
+                                         bcs: showCharacterInBetterCallSaulSeason)
     }
 }

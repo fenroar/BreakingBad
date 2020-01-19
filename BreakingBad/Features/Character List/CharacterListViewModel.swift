@@ -36,11 +36,16 @@ final class CharacterListViewModel {
     private let networkService: NetworkService
     private var loadedCharacters: [Character] = []
     private var filterTerm = ""
+    private var filteredBBSeasons: Set<Int> = Set()
+    private var filteredBCSSeasons: Set<Int> = Set()
     private weak var delegate: CharacterListViewModelDelegate?
 
     var items: [CharacterListItemViewModel] {
         let filteredCharacter = loadedCharacters.filter {
-            return filterTerm.isEmpty ? true : $0.name.contains(filterTerm)
+            let containsSearchTerm = filterTerm.isEmpty ? true : $0.name.contains(filterTerm)
+            let inBB = !Set($0.appearance).intersection(filteredBBSeasons).isEmpty
+            let inBCS = !Set($0.betterCallSaulAppearance).intersection(filteredBCSSeasons).isEmpty
+            return containsSearchTerm && (inBB || inBCS)
         }
 
         return filteredCharacter.compactMap { CharacterListItemViewModel(character: $0) }
@@ -66,6 +71,12 @@ final class CharacterListViewModel {
             }
 
         }
+    }
+
+    func updateFilteredSeasons(bb: Set<Int>, bcs: Set<Int>) {
+        self.filteredBBSeasons = bb
+        self.filteredBCSSeasons = bcs
+        delegate?.characterListViewModelStateDidChange(.itemsUpdated)
     }
 
     func filter(_ searchTerm: String) {
