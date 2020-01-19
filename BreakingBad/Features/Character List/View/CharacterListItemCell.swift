@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CharacterListItemCell: UITableViewCell {
 
@@ -26,6 +27,9 @@ final class CharacterListItemCell: UITableViewCell {
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
 
+    // MARK: - Properties
+    private var itemViewModel: CharacterListItemViewModel?
+
     // MARK: - Override
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,9 +37,27 @@ final class CharacterListItemCell: UITableViewCell {
         setup()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.itemViewModel = .none
+    }
+
     // MARK: - Internal
     func setup(with viewModel: CharacterListItemViewModel) {
+        self.itemViewModel = viewModel
         nameLabel.text = viewModel.displayName
+    }
+
+    func willDisplay() {
+        guard let url = itemViewModel?.imageURL else {
+            return
+        }
+
+        iconImageView.kf.setImage(with: url)
+    }
+
+    func didEndDisplay() {
+        iconImageView.kf.cancelDownloadTask()
     }
 
     // MARK: - Private

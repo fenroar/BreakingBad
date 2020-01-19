@@ -51,6 +51,22 @@ extension CharacterListViewController: UITableViewDataSource {
         return viewModel?.items.count ?? 0
     }
 
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let characterItemCell = cell as? CharacterListItemCell else {
+            return
+        }
+
+        characterItemCell.willDisplay()
+    }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let characterItemCell = cell as? CharacterListItemCell else {
+            return
+        }
+
+        characterItemCell.didEndDisplay()
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let characterItemCell = tableView.dequeueReusableCell(withIdentifier: CharacterListItemCell.reuseIdentifier, for: indexPath) as? CharacterListItemCell,
             let itemViewModel = viewModel?.items[indexPath.row] else {
