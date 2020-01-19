@@ -7,6 +7,7 @@ target 'BreakingBad' do
 
   # Pods for BreakingBad
   pod 'Kingfisher', '5.13.0'
+  pod 'MultiSelectSegmentedControl'
 
   target 'BreakingBadTests' do
     inherit! :search_paths

@@ -2,17 +2,25 @@ PODS:
   - Kingfisher (5.13.0):
     - Kingfisher/Core (= 5.13.0)
   - Kingfisher/Core (5.13.0)
+  - MultiSelectSegmentedControl (2.2.0):
+    - SweeterSwift
+  - SweeterSwift (1.0.5)
 
 DEPENDENCIES:
   - Kingfisher (= 5.13.0)
+  - MultiSelectSegmentedControl
 
 SPEC REPOS:
   trunk:
     - Kingfisher
+    - MultiSelectSegmentedControl
+    - SweeterSwift
 
 SPEC CHECKSUMS:
   Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
+  MultiSelectSegmentedControl: e34388e5d8de55a43ba0191662246c655f5b9d5a
+  SweeterSwift: 2708d1eea926546f8f6e8fea38ac8f5598ff00c7
 
-PODFILE CHECKSUM: db75aabf2d0486ae127d8c00d7d437ecad56332f
+PODFILE CHECKSUM: 785f893091895ca9440af274276e9d13e26d90af
 
 COCOAPODS: 1.8.3
