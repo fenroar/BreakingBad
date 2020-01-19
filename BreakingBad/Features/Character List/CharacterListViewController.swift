@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharacterListViewController.swift
 //  BreakingBad
 //
 //  Created by Peter Su on 19/01/2020.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class CharacterListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
