@@ -9,10 +9,28 @@
 import Foundation
 
 protocol CharacterListViewModelDelegate: class {
-    func characterListDidUpdate()
+    func characterListViewModelStateDidChange(_ state: CharacterListViewModel.State)
 }
 
 final class CharacterListViewModel {
+
+    enum State: Equatable {
+        case loading
+        case itemsUpdated
+        case failed(message: String)
+
+        static func == (lhs: State, rhs: State) -> Bool {
+            switch (lhs, rhs) {
+            case (.loading, .loading),
+                 (.itemsUpdated, .itemsUpdated):
+                return true
+            case (let .failed(lhsError), let .failed(rhsError)):
+                return lhsError == rhsError
+            default:
+                return false
+            }
+        }
+    }
 
     // MARK: - Properties
     private let networkService: NetworkService
@@ -36,22 +54,22 @@ final class CharacterListViewModel {
 
     // MARK: - Internal
     func loadCharacters() {
+        delegate?.characterListViewModelStateDidChange(.loading)
+
         networkService.getCharacters { [weak self] result in
             switch result {
             case .success(let characters):
                 self?.loadedCharacters = characters
-
+                self?.delegate?.characterListViewModelStateDidChange(.itemsUpdated)
             case .failure(let error):
-                // TODO: Handle error case
-                break
+                self?.delegate?.characterListViewModelStateDidChange(.failed(message: error.localizedDescription))
             }
 
-            self?.delegate?.characterListDidUpdate()
         }
     }
 
     func filter(_ searchTerm: String) {
         self.filterTerm = searchTerm
-        delegate?.characterListDidUpdate()
+        delegate?.characterListViewModelStateDidChange(.itemsUpdated)
     }
 }

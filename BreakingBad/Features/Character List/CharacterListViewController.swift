@@ -11,6 +11,9 @@ import UIKit
 final class CharacterListViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet var messageContainerView: UIView!
+    @IBOutlet var errorMessageLabel: UILabel!
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var tableView: UITableView!
 
     // MARK: - Properties
@@ -32,6 +35,10 @@ final class CharacterListViewController: UIViewController {
     private func setup() {
         title = "Breaking Bad"
 
+        loadingIndicator.style = .large
+        loadingIndicator.hidesWhenStopped = true
+
+        // Set up tableView
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = CharacterListItemCell.estimatedHeight
         tableView.dataSource = self
@@ -40,12 +47,18 @@ final class CharacterListViewController: UIViewController {
         tableView.register(CharacterListItemCell.nib,
                            forCellReuseIdentifier: CharacterListItemCell.reuseIdentifier)
 
+        // Set up search controller
         let searchController = UISearchController()
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Type something here to search"
         searchController.searchResultsUpdater = self
 
         navigationItem.searchController = searchController
+    }
+
+    // MARK: - Action
+    @IBAction func handleRetryButton() {
+        viewModel?.loadCharacters()
     }
 }
 
@@ -98,7 +111,25 @@ extension CharacterListViewController: UITableViewDelegate {
 
 // MARK: - CharacterListViewModelDelegate
 extension CharacterListViewController: CharacterListViewModelDelegate {
-    func characterListDidUpdate() {
-        tableView.reloadData()
+    func characterListViewModelStateDidChange(_ state: CharacterListViewModel.State) {
+        if state == .loading {
+            loadingIndicator.startAnimating()
+        } else {
+            loadingIndicator.stopAnimating()
+        }
+
+        if case .failed(let errorMessage) = state {
+            messageContainerView.isHidden = false
+            errorMessageLabel.text = errorMessage
+        } else {
+            messageContainerView.isHidden = true
+        }
+
+        if case .itemsUpdated = state {
+            tableView.reloadData()
+            tableView.isHidden = false
+        } else {
+            tableView.isHidden = true
+        }
     }
 }

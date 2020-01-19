@@ -9,6 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterListViewController" customModule="BreakingBad" customModuleProvider="target">
             <connections>
+                <outlet property="errorMessageLabel" destination="3Zb-O1-ycW" id="jeu-iR-5zg"/>
+                <outlet property="loadingIndicator" destination="X9M-62-wPZ" id="FKa-ID-h92"/>
+                <outlet property="messageContainerView" destination="40H-PQ-8F1" id="VlO-4S-d6y"/>
                 <outlet property="tableView" destination="nKi-4D-dw2" id="u6f-Ld-bYX"/>
                 <outlet property="view" destination="q5X-Ut-fOx" id="BVl-Xx-hQB"/>
             </connections>
@@ -22,13 +25,49 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40H-PQ-8F1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zb-O1-ycW">
+                            <rect key="frame" x="24" y="317" width="366" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtC-si-pFg">
+                            <rect key="frame" x="188.5" y="353.5" width="37" height="30"/>
+                            <state key="normal" title="Retry"/>
+                            <connections>
+                                <action selector="handleRetryButton" destination="-1" eventType="touchUpInside" id="JEx-vK-sL4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="3Zb-O1-ycW" firstAttribute="leading" secondItem="40H-PQ-8F1" secondAttribute="leading" constant="24" id="8V5-wX-m9M"/>
+                        <constraint firstItem="qtC-si-pFg" firstAttribute="top" secondItem="3Zb-O1-ycW" secondAttribute="bottom" constant="16" id="90K-48-u5S"/>
+                        <constraint firstItem="3Zb-O1-ycW" firstAttribute="centerX" secondItem="40H-PQ-8F1" secondAttribute="centerX" id="91s-E4-Qlu"/>
+                        <constraint firstItem="qtC-si-pFg" firstAttribute="centerX" secondItem="3Zb-O1-ycW" secondAttribute="centerX" id="BjQ-hy-DVk"/>
+                        <constraint firstItem="3Zb-O1-ycW" firstAttribute="centerY" secondItem="40H-PQ-8F1" secondAttribute="centerY" multiplier="0.8" id="P29-ej-Q65"/>
+                        <constraint firstAttribute="trailing" secondItem="3Zb-O1-ycW" secondAttribute="trailing" constant="24" id="Yiy-uL-wgI"/>
+                    </constraints>
+                </view>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="X9M-62-wPZ">
+                    <rect key="frame" x="197" y="443" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="nKi-4D-dw2" secondAttribute="trailing" id="7c7-J9-ft3"/>
                 <constraint firstAttribute="bottom" secondItem="nKi-4D-dw2" secondAttribute="bottom" id="CEq-LT-rSK"/>
+                <constraint firstItem="X9M-62-wPZ" firstAttribute="centerY" secondItem="Q5D-qp-8Jk" secondAttribute="centerY" id="FQj-BL-LBp"/>
                 <constraint firstItem="nKi-4D-dw2" firstAttribute="top" secondItem="q5X-Ut-fOx" secondAttribute="top" id="GDY-l2-h0F"/>
+                <constraint firstItem="40H-PQ-8F1" firstAttribute="leading" secondItem="Q5D-qp-8Jk" secondAttribute="leading" id="Ilt-uf-NBS"/>
                 <constraint firstItem="nKi-4D-dw2" firstAttribute="leading" secondItem="q5X-Ut-fOx" secondAttribute="leading" id="JtI-FW-itL"/>
+                <constraint firstItem="40H-PQ-8F1" firstAttribute="top" secondItem="Q5D-qp-8Jk" secondAttribute="top" id="Nwc-TY-jeH"/>
+                <constraint firstItem="Q5D-qp-8Jk" firstAttribute="bottom" secondItem="40H-PQ-8F1" secondAttribute="bottom" id="duP-tq-Dmo"/>
+                <constraint firstItem="X9M-62-wPZ" firstAttribute="centerX" secondItem="Q5D-qp-8Jk" secondAttribute="centerX" id="hXS-Eg-nRl"/>
+                <constraint firstItem="Q5D-qp-8Jk" firstAttribute="trailing" secondItem="40H-PQ-8F1" secondAttribute="trailing" id="uXi-LP-eWD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5D-qp-8Jk"/>
             <point key="canvasLocation" x="139" y="153"/>
