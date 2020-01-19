@@ -26,6 +26,7 @@
 		D08DC22723D4F2F500AFAFCC /* CharacterListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC22623D4F2F500AFAFCC /* CharacterListItemCell.swift */; };
 		D08DC22923D4F2FD00AFAFCC /* CharacterListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */; };
 		D08DC23223D4FD0600AFAFCC /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */; };
+		D08DC23423D505C800AFAFCC /* CharacterListItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23323D505C800AFAFCC /* CharacterListItemViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D08DC22623D4F2F500AFAFCC /* CharacterListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItemCell.swift; sourceTree = "<group>"; };
 		D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListItemCell.xib; sourceTree = "<group>"; };
 		D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
+		D08DC23323D505C800AFAFCC /* CharacterListItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItemViewModelTests.swift; sourceTree = "<group>"; };
 		D9F91522C5FE3D76F31CEBAD /* Pods_BreakingBad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */,
+				D08DC23323D505C800AFAFCC /* CharacterListItemViewModelTests.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D08DC23423D505C800AFAFCC /* CharacterListItemViewModelTests.swift in Sources */,
 				D08DC23223D4FD0600AFAFCC /* CharacterListViewModelTests.swift in Sources */,
 				D08DC21923D4DF7A00AFAFCC /* CharacterTests.swift in Sources */,
 			);
