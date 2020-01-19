@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,11 @@
 		D08DC1EA23D4DB3700AFAFCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC1E923D4DB3700AFAFCC /* SceneDelegate.swift */; };
 		D08DC1F123D4DB3800AFAFCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08DC1F023D4DB3800AFAFCC /* Assets.xcassets */; };
 		D08DC1F423D4DB3800AFAFCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08DC1F223D4DB3800AFAFCC /* LaunchScreen.storyboard */; };
-		D08DC1FF23D4DB3800AFAFCC /* BreakingBadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC1FE23D4DB3800AFAFCC /* BreakingBadTests.swift */; };
 		D08DC20A23D4DB6300AFAFCC /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC20923D4DB6300AFAFCC /* CharacterListViewController.swift */; };
 		D08DC20E23D4DC3500AFAFCC /* CharacterListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC20D23D4DC3500AFAFCC /* CharacterListViewController.xib */; };
 		D08DC21323D4DD5800AFAFCC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21223D4DD5800AFAFCC /* Character.swift */; };
 		D08DC21623D4DF6100AFAFCC /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = D08DC21523D4DF6100AFAFCC /* characters.json */; };
-		D08DC21923D4DF7A00AFAFCC /* CharacterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */; };
+		D08DC21923D4DF7A00AFAFCC /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21823D4DF7A00AFAFCC /* CharacterTests.swift */; };
 		D08DC21C23D4E43800AFAFCC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21B23D4E43800AFAFCC /* Endpoint.swift */; };
 		D08DC21E23D4E4AD00AFAFCC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */; };
 		D08DC22023D4E4F300AFAFCC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */; };
@@ -26,6 +25,7 @@
 		D08DC22423D4E78D00AFAFCC /* CharacterListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC22323D4E78D00AFAFCC /* CharacterListItemViewModel.swift */; };
 		D08DC22723D4F2F500AFAFCC /* CharacterListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC22623D4F2F500AFAFCC /* CharacterListItemCell.swift */; };
 		D08DC22923D4F2FD00AFAFCC /* CharacterListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */; };
+		D08DC23223D4FD0600AFAFCC /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +51,12 @@
 		D08DC1F323D4DB3800AFAFCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D08DC1F523D4DB3800AFAFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08DC1FA23D4DB3800AFAFCC /* BreakingBadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreakingBadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D08DC1FE23D4DB3800AFAFCC /* BreakingBadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadTests.swift; sourceTree = "<group>"; };
 		D08DC20023D4DB3800AFAFCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08DC20923D4DB6300AFAFCC /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		D08DC20D23D4DC3500AFAFCC /* CharacterListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListViewController.xib; sourceTree = "<group>"; };
 		D08DC21223D4DD5800AFAFCC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D08DC21523D4DF6100AFAFCC /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
-		D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTest.swift; sourceTree = "<group>"; };
+		D08DC21823D4DF7A00AFAFCC /* CharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
 		D08DC21B23D4E43800AFAFCC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		D08DC21D23D4E4AD00AFAFCC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D08DC21F23D4E4F300AFAFCC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		D08DC22323D4E78D00AFAFCC /* CharacterListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItemViewModel.swift; sourceTree = "<group>"; };
 		D08DC22623D4F2F500AFAFCC /* CharacterListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItemCell.swift; sourceTree = "<group>"; };
 		D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterListItemCell.xib; sourceTree = "<group>"; };
+		D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
 		D9F91522C5FE3D76F31CEBAD /* Pods_BreakingBad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -96,7 +96,6 @@
 				419092CF71C2AE1228BF35AB /* Pods-BreakingBadTests.debug.xcconfig */,
 				C767DDEBB739753522C2CEF0 /* Pods-BreakingBadTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,9 +146,9 @@
 		D08DC1FD23D4DB3800AFAFCC /* BreakingBadTests */ = {
 			isa = PBXGroup;
 			children = (
+				D08DC23023D4FCFA00AFAFCC /* View Model */,
 				D08DC21723D4DF6F00AFAFCC /* Model */,
 				D08DC21423D4DF5200AFAFCC /* Stub */,
-				D08DC1FE23D4DB3800AFAFCC /* BreakingBadTests.swift */,
 				D08DC20023D4DB3800AFAFCC /* Info.plist */,
 			);
 			path = BreakingBadTests;
@@ -194,7 +193,7 @@
 		D08DC21723D4DF6F00AFAFCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D08DC21823D4DF7A00AFAFCC /* CharacterTest.swift */,
+				D08DC21823D4DF7A00AFAFCC /* CharacterTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +215,14 @@
 				D08DC22823D4F2FD00AFAFCC /* CharacterListItemCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D08DC23023D4FCFA00AFAFCC /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D08DC23123D4FD0600AFAFCC /* CharacterListViewModelTests.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,8 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08DC1FF23D4DB3800AFAFCC /* BreakingBadTests.swift in Sources */,
-				D08DC21923D4DF7A00AFAFCC /* CharacterTest.swift in Sources */,
+				D08DC23223D4FD0600AFAFCC /* CharacterListViewModelTests.swift in Sources */,
+				D08DC21923D4DF7A00AFAFCC /* CharacterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
