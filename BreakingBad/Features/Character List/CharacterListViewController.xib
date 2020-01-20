@@ -24,19 +24,19 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ku4-Hn-7cC">
-                    <rect key="frame" x="16" y="44" width="382" height="313"/>
+                    <rect key="frame" x="16" y="52" width="382" height="329"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-r3-Hzm">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="148.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-r3-Hzm">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="156.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breaking Bad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSP-2b-1iU">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kls-sE-ZFb" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
-                                    <rect key="frame" x="0.0" y="20.5" width="382" height="128"/>
+                                    <rect key="frame" x="0.0" y="28.5" width="382" height="128"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="128" placeholder="YES" id="N75-CZ-rPy"/>
@@ -44,17 +44,17 @@
                                 </view>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-wP-XVp">
-                            <rect key="frame" x="0.0" y="164.5" width="382" height="148.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7rU-wP-XVp">
+                            <rect key="frame" x="0.0" y="172.5" width="382" height="156.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Call Saul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQX-hd-EdE">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEU-qD-1hz" customClass="MultiSelectSegmentedControl" customModule="MultiSelectSegmentedControl">
-                                    <rect key="frame" x="0.0" y="20.5" width="382" height="128"/>
+                                    <rect key="frame" x="0.0" y="28.5" width="382" height="128"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="128" placeholder="YES" id="eO8-A2-BOL"/>
@@ -65,7 +65,7 @@
                     </subviews>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nKi-4D-dw2">
-                    <rect key="frame" x="0.0" y="373" width="414" height="523"/>
+                    <rect key="frame" x="0.0" y="397" width="414" height="499"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40H-PQ-8F1">
@@ -108,7 +108,7 @@
                 <constraint firstItem="40H-PQ-8F1" firstAttribute="leading" secondItem="Q5D-qp-8Jk" secondAttribute="leading" id="Ilt-uf-NBS"/>
                 <constraint firstItem="nKi-4D-dw2" firstAttribute="leading" secondItem="q5X-Ut-fOx" secondAttribute="leading" id="JtI-FW-itL"/>
                 <constraint firstItem="40H-PQ-8F1" firstAttribute="top" secondItem="Q5D-qp-8Jk" secondAttribute="top" id="Nwc-TY-jeH"/>
-                <constraint firstItem="Ku4-Hn-7cC" firstAttribute="top" secondItem="Q5D-qp-8Jk" secondAttribute="top" id="buY-hj-fMq"/>
+                <constraint firstItem="Ku4-Hn-7cC" firstAttribute="top" secondItem="Q5D-qp-8Jk" secondAttribute="top" constant="8" id="buY-hj-fMq"/>
                 <constraint firstItem="Q5D-qp-8Jk" firstAttribute="bottom" secondItem="40H-PQ-8F1" secondAttribute="bottom" id="duP-tq-Dmo"/>
                 <constraint firstItem="X9M-62-wPZ" firstAttribute="centerX" secondItem="Q5D-qp-8Jk" secondAttribute="centerX" id="hXS-Eg-nRl"/>
                 <constraint firstItem="Q5D-qp-8Jk" firstAttribute="trailing" secondItem="40H-PQ-8F1" secondAttribute="trailing" id="uXi-LP-eWD"/>

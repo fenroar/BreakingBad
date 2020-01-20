@@ -45,6 +45,7 @@ final class CharacterListItemCell: UITableViewCell {
     // MARK: - Internal
     func setup(with viewModel: CharacterListItemViewModel) {
         self.itemViewModel = viewModel
+        selectionStyle = .none
         nameLabel.text = viewModel.displayName
     }
 
